@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Samarth Choudhary — Premium Personal Portfolio & Digital Resume
 
-## Getting Started
+A world-class, recruiter-ready, high-fidelity personal portfolio and digital resume website designed for **Samarth Choudhary**. Built using **Next.js 15**, **React 19**, **TypeScript**, **Tailwind CSS v4**, and highly optimized animations using **Framer Motion** and **GSAP**.
 
-First, run the development server:
+---
+
+## 🎨 Tech Stack & Architecture
+
+* **Core**: Next.js 15 (App Router), React 19, TypeScript
+* **Styling**: Tailwind CSS v4 (using `@theme inline` tokens, glassmorphism utilities)
+* **Animations**:
+  * **HTML5 Canvas + GSAP**: For high-performance particle intro loading sequences without loading heavy packages (Three.js).
+  * **Framer Motion**: Staggered scroll reveals, tab transitions, sliding items, hover tilt effects.
+* **Integrations**: Real-time GitHub Profile Stats & Contribution Graph APIs.
+* **SEO & Social Optimization**: Structured JSON-LD schemas, OpenGraph meta tags specifically optimized for WhatsApp, LinkedIn, Twitter, and placement search bots.
+
+---
+
+## 🚀 Getting Started
+
+### 1. Installation
+
+Clone the repository and install dependencies:
+
+```bash
+npm install
+```
+
+This will automatically configure packages like `framer-motion`, `gsap`, `react-icons`, and `react-type-animation`.
+
+### 2. Run Locally
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to inspect the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Verify TypeScript integrity and compile the optimized production bundle:
 
-## Learn More
+```bash
+# Type check verification
+npx tsc --noEmit
 
-To learn more about Next.js, take a look at the following resources:
+# Compile production bundle
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📂 Project Structure
 
-## Deploy on Vercel
+* `src/lib/data.ts`: Centralized resume data constant file. Easily update your projects, skills, history, and social links in one file.
+* `src/components/Preloader.tsx`: GSAP + HTML5 Canvas neural loading animation.
+* `src/components/Navbar.tsx`: Fixed header tracking viewport scrolling.
+* `src/components/Hero.tsx`: Typography header with Typing roles.
+* `src/components/About.tsx`: Stat counters and decorative SC card layout.
+* `src/components/Skills.tsx`: Dynamically organized tech tabs.
+* `src/components/Projects.tsx`: Interactive cards with expandable feature highlights.
+* `src/components/Experience.tsx` & `src/components/Education.tsx`: Animated visual histories.
+* `src/components/GitHub.tsx`: Dynamic profile integrations.
+* `src/components/Contact.tsx`: Validated client-side mail draft.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔗 Deployment
+
+This application is ready to deploy on **Vercel** with a single click. Simply push to GitHub, link your repository on Vercel, and click **Deploy**. Next.js will build it statically for maximum rendering speeds and performance.
+
+---
+
+## 📝 License
+
+Designed & Developed as a professional personal brand. Feel free to customize and expand it.

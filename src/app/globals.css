@@ -1,26 +1,383 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ============================================================================
+   Design System – Custom Cyber-Minimalist Theme Tokens (Next-Gen UI)
+   ============================================================================ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* ---- Colors ---- */
+  --color-background: #02040a;
+  --color-foreground: #ffffff;
+  --color-primary: #00f5ff;
+  --color-secondary: #ff007a;
+  --color-accent: #3dfa28;
+  --color-muted: #7f8a9e;
+  --color-surface: #060b16;
+  --color-card: #0b1122;
+  --color-border: #131b31;
+
+  /* ---- Fonts ---- */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    sans-serif;
+  --font-display: var(--font-outfit), var(--font-inter), ui-sans-serif,
+    system-ui, sans-serif;
+
+  /* ---- Animation durations ---- */
+  --animate-duration-fast: 150ms;
+  --animate-duration-normal: 300ms;
+  --animate-duration-slow: 500ms;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================================================
+   Base Styles
+   ============================================================================ */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #02040a;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
 }
+
+/* ---- Selection ---- */
+::selection {
+  background-color: rgba(255, 0, 122, 0.35);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: rgba(255, 0, 122, 0.35);
+  color: #ffffff;
+}
+
+/* ---- Custom Scrollbar ---- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #02040a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff007a;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00f5ff;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ff007a #02040a;
+}
+
+/* ============================================================================
+   Custom Utility & Next-Gen Cyber Classes
+   ============================================================================ */
+
+/* ---- Premium Futuristic Cyber Card ---- */
+.cyber-card {
+  position: relative;
+  background: rgba(6, 11, 22, 0.85);
+  border: 1.5px solid #131b31;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0px 0px 0px transparent;
+}
+
+.cyber-card:hover {
+  border-color: #00f5ff;
+  box-shadow: 5px 5px 0px #ff007a;
+  transform: translate(-5px, -5px);
+}
+
+/* ---- Sci-Fi Corner Brackets ---- */
+.cyber-corners::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #00f5ff;
+  border-left: 2px solid #00f5ff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cyber-corners::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid #ff007a;
+  border-right: 2px solid #ff007a;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cyber-card:hover .cyber-corners::before,
+.cyber-card:hover .cyber-corners::after {
+  opacity: 1;
+}
+
+/* ---- Glassmorphism ---- */
+.glass {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  background: rgba(6, 11, 22, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-strong {
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  background: rgba(6, 11, 22, 0.85);
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ---- Text Effects ---- */
+.glow-text {
+  text-shadow: 0 0 10px rgba(0, 245, 255, 0.5),
+    0 0 20px rgba(255, 0, 122, 0.3);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #00f5ff 0%, #ff007a 50%, #3dfa28 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-primary {
+  background: linear-gradient(135deg, #00f5ff 0%, #ff007a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---- Section Padding ---- */
+.section-padding {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .section-padding {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* ---- Glow Effects ---- */
+.glow-border {
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.15),
+    inset 0 0 15px rgba(0, 229, 255, 0.05);
+}
+
+.glow-border:hover {
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.25),
+    inset 0 0 25px rgba(0, 229, 255, 0.1);
+}
+
+/* ============================================================================
+   Animation Keyframes
+   ============================================================================ */
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 40px rgba(0, 229, 255, 0.6);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes loading-bar {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 70%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ---- Animation Utility Classes ---- */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+.animate-loading-bar {
+  animation: loading-bar 1.5s ease-in-out;
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* ============================================================================
+   Background Patterns
+   ============================================================================ */
+
+.bg-grid {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.bg-dots {
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.08) 1px,
+    transparent 1px
+  );
+  background-size: 30px 30px;
+}
+
+/* ============================================================================
+   Hero Background – Floating Particles
+   ============================================================================ */
+
+@keyframes hero-float-up {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) translateX(20px);
+    opacity: 0;
+  }
+}
+
