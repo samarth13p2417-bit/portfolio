@@ -167,6 +167,29 @@ export const skillCategories: SkillCategory[] = [
 export const projects: Project[] = [
   {
     id: 1,
+    title: "FaceTrack AI",
+    description:
+      "AI-powered real-time facial landmark tracking and identity recognition system. Built utilizing computer vision models and neural network algorithms to extract facial coordinates, compute high-accuracy landmark mappings, and support secure system access controls.",
+    technologies: [
+      "Python",
+      "Computer Vision",
+      "OpenCV",
+      "MediaPipe",
+      "Deep Learning",
+      "NumPy",
+    ],
+    year: "2026",
+    github: "https://github.com/samarth13p2417-bit/FaceTrack-AI",
+    demo: "#",
+    features: [
+      "Real-time Landmark Tracking",
+      "Facial Mesh Generation",
+      "Deep Learning Recognition",
+      "High FPS Optimization",
+    ],
+  },
+  {
+    id: 2,
     title: "Credit Card Fraud Detection",
     description:
       "Machine Learning based fraud detection platform using multiple classification models with real-time prediction and analytics dashboard. Developed a fraud detection system using multiple ML models and data analytics techniques to identify suspicious credit card transactions with high accuracy.",
@@ -188,7 +211,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "Customer Churn Prediction",
     description:
       "Predict customer retention and identify churn risks using advanced machine learning models and business analytics. Built comprehensive analysis pipeline with feature engineering and model evaluation.",
@@ -210,7 +233,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "School Management System",
     description:
       "Complete digital school administration platform with attendance tracking, academic management, and comprehensive reporting modules for efficient educational institution management.",
@@ -226,7 +249,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     title: "3D Car Showroom Website",
     description:
       "Interactive vehicle showcase platform with modern UI and immersive browsing experience. Developed multiple websites and applications including a 3D car showroom to enhance user experience.",

@@ -146,6 +146,19 @@ export default function ResumePage() {
                 <div className="space-y-4">
                   <div className="border border-white/5 bg-white/[0.02] p-4 rounded-xl print:border-black/10 print:bg-transparent">
                     <div className="flex items-center justify-between mb-1.5">
+                      <h4 className="text-base font-bold text-white print:text-black">FaceTrack AI</h4>
+                      <span className="text-xs font-mono text-primary font-semibold">2026</span>
+                    </div>
+                    <p className="text-xs text-muted leading-relaxed print:text-black">
+                      AI-powered real-time facial landmark tracking and identity recognition system. Built utilizing computer vision models and neural network algorithms.
+                    </p>
+                    <p className="text-[10px] font-mono text-accent mt-2 print:text-black">
+                      Python • OpenCV • MediaPipe • Deep Learning • NumPy
+                    </p>
+                  </div>
+
+                  <div className="border border-white/5 bg-white/[0.02] p-4 rounded-xl print:border-black/10 print:bg-transparent">
+                    <div className="flex items-center justify-between mb-1.5">
                       <h4 className="text-base font-bold text-white print:text-black">Credit Card Fraud Detection</h4>
                       <span className="text-xs font-mono text-primary font-semibold">2026</span>
                     </div>
@@ -154,19 +167,6 @@ export default function ResumePage() {
                     </p>
                     <p className="text-[10px] font-mono text-accent mt-2 print:text-black">
                       Python • Flask • Pandas • Scikit-Learn
-                    </p>
-                  </div>
-
-                  <div className="border border-white/5 bg-white/[0.02] p-4 rounded-xl print:border-black/10 print:bg-transparent">
-                    <div className="flex items-center justify-between mb-1.5">
-                      <h4 className="text-base font-bold text-white print:text-black">School Management System</h4>
-                      <span className="text-xs font-mono text-primary font-semibold">2025</span>
-                    </div>
-                    <p className="text-xs text-muted leading-relaxed print:text-black">
-                      Complete digital school administration platform with attendance, academics, and reporting modules.
-                    </p>
-                    <p className="text-[10px] font-mono text-accent mt-2 print:text-black">
-                      Python • Flask • SQL • HTML/CSS • JavaScript
                     </p>
                   </div>
                 </div>
